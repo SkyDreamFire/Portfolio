@@ -189,7 +189,7 @@ const form = useRef();
                     </span>
                   </h1>
                   <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
-                    Développeur Junior passionné
+                    Développeur Junior Passionné
                   </p>
                   <p className="text-lg text-gray-500 dark:text-gray-400 max-w-lg">
                     Étudiant en Génie Logiciel à l'IUC, spécialisé dans le développement web et desktop. 
