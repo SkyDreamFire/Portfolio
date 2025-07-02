@@ -185,7 +185,7 @@ const form = useRef();
                   <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                     Salut, je suis{' '}
                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      Johan
+                      Johan DJONGO
                     </span>
                   </h1>
                   <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
@@ -227,7 +227,7 @@ const form = useRef();
 
               <div className="flex justify-center lg:justify-end">
                 <div className="relative">
-                  <div className="w-95 h-70 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
+                  <div className="w-80 h-70 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
                     <img
                       src="/PXL_20240211_100605586.PORTRAIT-removebg-preview.png"
                       alt="Johan Djongo"
