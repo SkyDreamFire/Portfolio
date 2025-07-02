@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, MapPin, Calendar, GraduationCap, Phone, Mail, Linkedin, Github, ExternalLink, Code, Database, Palette, Server, Atom, Bug } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+const form = useRef();
+  const [status, setStatus] = useState('');
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_rz84vad',       // Ton SERVICE ID
+      'template_g4lcubs',      // Ton TEMPLATE ID
+      form.current,
+      'ShrYeOzUOHxxuF23z'       // Ta PUBLIC KEY
+    )
+    .then(
+      () => {
+        setStatus('✅ Message envoyé avec succès !');
+        form.current.reset();
+      },
+      (error) => {
+        console.error(error);
+        setStatus('❌ Une erreur est survenue.');
+      }
+    );
+  };
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -456,11 +479,11 @@ function App() {
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                 <h3 className="text-xl font-semibold mb-6">Envoyez-moi un message</h3>
-                <form className="space-y-4">
+                <form ref={form} onSubmit={sendEmail} className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">Nom complet</label>
                     <input
-                      type="text"
+                      type="text" name="name"
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700"
                       placeholder="Votre nom"
                     />
@@ -468,7 +491,7 @@ function App() {
                   <div>
                     <label className="block text-sm font-medium mb-2">Email</label>
                     <input
-                      type="email"
+                      type="email" name="email"
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700"
                       placeholder="votre@email.com"
                     />
@@ -476,7 +499,7 @@ function App() {
                   <div>
                     <label className="block text-sm font-medium mb-2">Sujet</label>
                     <input
-                      type="text"
+                      type="text" name="style"
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700"
                       placeholder="Sujet de votre message"
                     />
@@ -484,17 +507,13 @@ function App() {
                   <div>
                     <label className="block text-sm font-medium mb-2">Message</label>
                     <textarea
-                      rows={5}
+                      rows={5} name="message"
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700"
                       placeholder="Votre message..."
                     ></textarea>
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                  >
-                    Envoyer le message
-                  </button>
+                  <button type="submit" className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200">Envoyer</button>
+        {status && <p className="text-sm text-center mt-2">{status}</p>}
                 </form>
               </div>
             </div>
