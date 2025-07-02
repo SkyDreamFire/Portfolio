@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Sun, Moon, Menu, X, MapPin, Calendar, GraduationCap, Phone, Mail, Linkedin, Github, ExternalLink, Code, Database, Palette, Server, Atom, Bug } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
@@ -6,6 +6,7 @@ function App() {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+
 const form = useRef();
   const [status, setStatus] = useState('');
 
@@ -499,7 +500,7 @@ const form = useRef();
                   <div>
                     <label className="block text-sm font-medium mb-2">Sujet</label>
                     <input
-                      type="text" name="style"
+                      type="text" name="title"
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700"
                       placeholder="Sujet de votre message"
                     />
