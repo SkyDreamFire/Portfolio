@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, MapPin, Calendar, GraduationCap, Phone, Mail, Linkedin, Github, ExternalLink, Code, Database, Palette, Server } from 'lucide-react';
+import { Sun, Moon, Menu, X, MapPin, Calendar, GraduationCap, Phone, Mail, Linkedin, Github, ExternalLink, Code, Database, Palette, Server, Atom, Bug } from 'lucide-react';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -36,22 +36,24 @@ function App() {
   };
 
   const skills = [
+    { name: 'C', level: 75, icon: Code },
     { name: 'HTML/CSS', level: 90, icon: Code },
     { name: 'JavaScript', level: 75, icon: Code },
     { name: 'PHP', level: 70, icon: Server },
-    { name: 'Java', level: 70, icon: Code },
+    { name: 'Java', level: 60, icon: Code },
     { name: 'VB.NET', level: 80, icon: Code },
     { name: 'SQL', level: 85, icon: Database },
     { name: 'Bootstrap', level: 85, icon: Palette },
-    { name: 'jQuery', level: 75, icon: Code }
+    { name: 'jQuery', level: 75, icon: Bug },
+    { name: 'React JS', level: 50, icon: Atom }
   ];
 
   const projects = [
     {
       title: "Système de Gestion Scolaire",
       description: "Application web complète pour la gestion des étudiants, notes et emplois du temps développée en PHP/MySQL.",
-      tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
-      image: "https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600"
+      tech: ["PHP", "HTML/CSS","FPDF","SQL", "Bootstrap", "JavaScript"],
+      image: "https://img.freepik.com/photos-gratuite/groupe-enfants-africains-pretant-attention-classe_23-2148892518.jpg?semt=ais_hybrid&w=740"
     },
     {
       title: "Application Desktop Java",
@@ -64,6 +66,18 @@ function App() {
       description: "Site vitrine moderne avec design responsive et animations CSS avancées.",
       tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      title: "Application Web de Gestion d'un Centre de Santé",
+      description: "Un site qui permet de gerer les patients, les medecins, les rendez-vous, les ressources materielles, etc.",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap","PHP", "Jquery"],
+      image: "https://media.istockphoto.com/id/1372701329/fr/photo/photo-dun-jeune-m%C3%A9decin-debout-les-bras-crois%C3%A9s-dans-un-bureau-dun-h%C3%B4pital.jpg?s=612x612&w=0&k=20&c=DGifB3DD4wA1qn8MecbSUpK3KTqWpPNl2rCsezNbA3g="
+    },
+    {
+      title: "Application Desktop Vb.net",
+      description: "Application desktop permettant de faciliter les taches aux utilisateurs.",
+      tech: ["Vb.net", "Visual Studio", "Sql", "Guna framework"],
+      image: "https://miro.medium.com/v2/resize:fit:1400/1*9twLETPyPdIeaD_oUqoJ7g.png"
     }
   ];
 
@@ -124,7 +138,7 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-                {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
+                {['Acceui;', 'A propos', 'Compétences', 'Projects', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
@@ -189,7 +203,7 @@ function App() {
 
               <div className="flex justify-center lg:justify-end">
                 <div className="relative">
-                  <div className="w-90 h-95 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
+                  <div className="w-95 h-70 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
                     <img
                       src="/PXL_20240211_100605586.PORTRAIT-removebg-preview.png"
                       alt="Johan Djongo"
@@ -370,9 +384,7 @@ function App() {
                         </span>
                       ))}
                     </div>
-                    <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium">
-                      <span>Voir le projet</span>
-                      <ExternalLink className="h-4 w-4" />
+                    <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium">                      
                     </button>
                   </div>
                 </div>
