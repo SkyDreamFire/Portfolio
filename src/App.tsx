@@ -191,7 +191,7 @@ function App() {
                 <div className="relative">
                   <div className="w-90 h-95 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl">
                     <img
-                      src="/src/assets/PXL_20240211_100605586.PORTRAIT-removebg-preview.png"
+                      src="/PXL_20240211_100605586.PORTRAIT-removebg-preview.png"
                       alt="Johan Djongo"
                       className="w-full h-full object-contain"
                     />
@@ -255,7 +255,7 @@ function App() {
                 <div className="relative">
                   <div className="w-96 h-90 rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="/src/assets/WhatsApp Image 2025-05-03 à 07.39.12_0761781a.jpg"
+                      src="/WhatsApp Image 2025-05-03 à 07.39.12_0761781a.jpg"
                       alt="Johan Djongo - Photo professionnelle"
                       className="w-full h-full object-contain"
                     />
